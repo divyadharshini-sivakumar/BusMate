@@ -1,5 +1,5 @@
 "use client";
-
+import { Suspense } from "react";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -20,7 +20,7 @@ import {
   FaUser,
 } from "react-icons/fa";
 
-export default function TicketsPage() {
+function TicketsContent() {
   const searchParams = useSearchParams();
   const highlightedBookingId = searchParams.get("highlight");
 
@@ -483,5 +483,21 @@ export default function TicketsPage() {
         })}
       </ul>
     </div>
+  );
+}
+
+export default function TicketsPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="rounded-xl border border-slate-200 bg-white p-10 text-center shadow-sm">
+          <p className="text-sm text-slate-600">
+            Loading your tickets...
+          </p>
+        </div>
+      }
+    >
+      <TicketsContent />
+    </Suspense>
   );
 }
