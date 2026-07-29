@@ -288,7 +288,7 @@ export default function AdminPage() {
       );
     });
 
-    return [...categoryCounts.entries()]
+    return Array.from(categoryCounts.entries())
       .map(([category, value]) => ({
         category,
         value,
