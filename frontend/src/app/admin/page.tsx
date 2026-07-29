@@ -223,7 +223,7 @@ export default function AdminPage() {
       );
     });
 
-    return [...routeCounts.entries()]
+    return Array.from(routeCounts.entries())
       .map(([route, bookingsCount]) => ({
         route: `Route ${route}`,
         bookings: bookingsCount,
