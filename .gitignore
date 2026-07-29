@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Env & secrets
+.env
+.env.local
+.env.*.local
+*.pem
+
+# Build
+frontend/.next/
+frontend/out/
+frontend/dist/
+backend/dist/
+*.egg
+
+# IDE
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Logs & coverage
+*.log
+coverage/
+htmlcov/
+.coverage
+
+# Supabase local
+supabase/.branches
+supabase/.temp
+
+# OS
+Thumbs.db
+
+# Test artifacts
+tests/results/
+*.pdf.tmp
+
+backend/.chroma_busmate/
+*.chroma/

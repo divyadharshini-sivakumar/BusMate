@@ -1,0 +1,59 @@
+# =============================================================================
+# BusMate backend – Python 3.10+ (tested target: 3.10.11 / Windows)
+# Aligned on openai>=2.x so CrewAI 1.x and LangChain 1.x coexist.
+# Uses crewai[openai] (native SDK) — does NOT pull litellm (avoids Rust builds).
+# =============================================================================
+
+# --- Web API ---
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+httpx==0.28.1
+email-validator==2.2.0
+python-dotenv>=1.2.2,<2.0.0
+pydantic>=2.11.9,<2.13.0
+pydantic-settings>=2.14.2,<3.0.0
+structlog==24.4.0
+tenacity==9.0.0
+
+# --- Auth / Supabase ---
+supabase==2.11.0
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# --- Tickets / QR / PDF ---
+reportlab==4.2.5
+qrcode[pil]==8.0
+Pillow==11.1.0
+
+# --- OpenAI SDK 2.x (shared by CrewAI native + langchain-openai 1.x) ---
+openai>=2.30.0,<3.0.0
+
+# --- LangChain 1.x + LangGraph 1.x (openai 2.x compatible) ---
+langchain>=1.0.0,<2.0.0
+langchain-core>=1.0.0,<2.0.0
+langchain-openai>=1.0.0,<2.0.0
+langchain-community>=0.3.20,<0.5.0
+langchain-text-splitters>=1.0.0,<2.0.0
+langgraph>=1.0.0,<2.0.0
+langsmith>=0.3.0
+
+# --- CrewAI 1.x with native OpenAI (NO litellm / NO Rust) ---
+crewai[openai]==1.15.8
+
+# --- RAG: Chroma + local embeddings ---
+chromadb>=1.1.0,<1.2.0
+sentence-transformers>=3.0.0,<4.0.0
+
+# --- Numeric / ML support ---
+numpy>=1.26.0,<2.1.0
+scikit-learn>=1.5.0,<1.7.0
+
+# --- Dev / QA ---
+pytest==8.3.4
+pytest-asyncio==0.25.0
+ruff==0.9.1
+
+beautifulsoup4>=4.12,<5
+lxml>=5,<7
+requests>=2.32,<3
