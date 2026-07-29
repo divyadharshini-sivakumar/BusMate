@@ -46,7 +46,7 @@ chromadb>=1.1.0,<1.2.0
 sentence-transformers>=3.0.0,<4.0.0
 
 # --- Numeric / ML support ---
-numpy>=1.26.0,<2.0.0
+numpy>=1.26.0,<2.1.0
 scikit-learn>=1.5.0,<1.7.0
 
 # --- Dev / QA ---
