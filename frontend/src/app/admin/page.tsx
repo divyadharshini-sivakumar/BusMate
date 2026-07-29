@@ -272,7 +272,7 @@ export default function AdminPage() {
       dailyValues.set(dateKey, existing);
     });
 
-    return [...dailyValues.values()].slice(-7);
+    return Array.from(dailyValues.values()).slice(-7);
   }, [bookings]);
 
   const complaintCategories = useMemo(() => {
